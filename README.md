@@ -1,12 +1,14 @@
 # RtspServer
 
-#说明：默认开启V4L2支持，已内置依赖x264的源码仓，执行git submodule update --init即可同步
-#x264没有默认安装在系统路径，而是安装在build/x264 路径下
+### 说明：默认开启V4L2支持，已内置依赖x264的源码仓，执行git submodule update --init即可同步  
+### x264没有默认安装在系统路径，而是安装在build/x264 路径下
 
-#嵌入式平台移植
-configure 后追加--host= --cross-prefix= --sysroot=
-例：./configure --prefix=/work/cc --enable-shared --disable-asm --host=arm-linux --cross-prefix=arm-linux--sysroot=/opt/arm-linux_cross/bin
-./configure --prefix=/work/cc --enable-shared --disable-asm --host=arm64-linux --cross-prefix=arm64-linux--sysroot=/opt/arm64-linux_cross/bin
+## 嵌入式平台移植  
+configure 后追加--host= --cross-prefix= --sysroot=  
+
+例：./configure --prefix=/work/cc --enable-shared --disable-asm --host=arm-linux --cross-prefix=arm-linux--sysroot=/opt/arm-linux_cross/bin  
+
+./configure --prefix=/work/cc --enable-shared --disable-asm --host=arm64-linux --cross-prefix=arm64-linux--sysroot=/opt/arm64-linux_cross/bin  
 
 - [项目介绍](#项目介绍)
 - [功能介绍](#项目介绍)
