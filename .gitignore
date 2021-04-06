@@ -1,0 +1,27 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+*.d
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+#*.dylib
+#*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+3rdpart/*
+build/*
+example/aac_rtsp_server
+example/h264_rtsp_server
+example/v4l2_rtsp_server
+example/h264_aac_rtsp_server
+test/*
+!test/*.cpp
+*.log

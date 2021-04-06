@@ -1,4 +1,4 @@
-V4L2_SUPPORT=n
+V4L2_SUPPORT=y
 ALSA_SUPPORT=n
 
 CROSS_COMPILE	=
@@ -7,13 +7,15 @@ CXX   			= $(CROSS_COMPILE)g++
 TOR_DIR 	= $(shell pwd)
 SRC_DIR 	= $(TOR_DIR)/src
 OBJS_PATH 	= $(TOR_DIR)/objs
+X264_INSTALL_DIR = $(TOR_DIR)/build/x264
 
 CXX_FLAGS 	= -O2 -g -I$(TOR_DIR)/src
 
 LD_FLAGS 	= -lpthread -lrt
 
 ifeq ($(V4L2_SUPPORT),y)
-LD_FLAGS	+= -lx264
+LD_FLAGS	+= -L$(X264_INSTALL_DIR)/lib -lx264 
+CXX_FLAGS	+= -I$(X264_INSTALL_DIR)/include
 endif
 
 ifeq ($(ALSA_SUPPORT),y)

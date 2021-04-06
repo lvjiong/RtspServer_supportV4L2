@@ -1,5 +1,13 @@
 # RtspServer
 
+#说明：默认开启V4L2支持，已内置依赖x264的源码仓，执行git submodule update --init即可同步
+#x264没有默认安装在系统路径，而是安装在build/x264 路径下
+
+#嵌入式平台移植
+configure 后追加--host= --cross-prefix= --sysroot=
+例：./configure --prefix=/work/cc --enable-shared --disable-asm --host=arm-linux --cross-prefix=arm-linux--sysroot=/opt/arm-linux_cross/bin
+./configure --prefix=/work/cc --enable-shared --disable-asm --host=arm64-linux --cross-prefix=arm64-linux--sysroot=/opt/arm64-linux_cross/bin
+
 - [项目介绍](#项目介绍)
 - [功能介绍](#项目介绍)
 - [开发环境](#开发环境)
@@ -39,14 +47,15 @@
 - 下载
 
   ```
-  # git clone git@github.com:ImSjt/RtspServer.git
+  # git clone https://github.com/lvjiong/RtspServer_supportV4L2.git
+  # git submodule update --init
   ```
 
 - 编译
 
-  ```c
-  # cd RtspServer/
-  # make
+  ```
+  # cd RtspServer_supportV4L2/
+  # ./build.sh
   ```
 
   编译之后在`example/`目录下会生成`h264_rtsp_server`、`aac_rtsp_server`、`h264_aac_rtsp_server`
@@ -57,7 +66,7 @@
 
   **h264_aac_rtsp_server**：同时传输音视频
 
-  另`v4l2_rtsp_server`和`alsa_rtsp_server`需要依赖别的库，默认不编译，稍后介绍
+  另`v4l2_rtsp_server`和`alsa_rtsp_server`需要依赖别的库，默认编译，稍后介绍
 
 - 运行`h264_rtsp_server`
 
@@ -252,7 +261,7 @@
 
   ![](./pic/mem.png) 
 
-## 联系方式
+## 原作者联系方式
 
 邮箱：1345648755@qq.com
 
